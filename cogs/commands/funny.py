@@ -5,7 +5,7 @@ import discord
 from discord import slash_command, option
 from discord.ext import commands
 
-
+active_games = {}  # Leeres Dictionary zum Speichern der aktiven Spiele
 class Funny(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -16,17 +16,29 @@ class Funny(commands.Cog):
         embed = discord.Embed(title="🎲 Würfeln", description=f"Du hast eine **{roll}** gewürfelt!")
         await ctx.respond(embed=embed)
 
+
     @slash_command(description="Errate die richtige Zahl")
     async def ratezahl(self, ctx):
+        author_id = str(ctx.author.id)  # Konvertiere die Benutzer-ID in einen String
+
+        if author_id in active_games:
+            embed = discord.Embed(title="🚫 Spiel läuft bereits",
+                                  description="Du hast bereits ein Ratespiel laufen. Bitte beende das aktuelle Spiel, bevor du ein neues startest.",
+                                  color=discord.Color.red())
+            await ctx.respond(embed=embed)
+            return
+
+        active_games[author_id] = True  # Speichere den Spielstatus für den Benutzer
+
         number = random.randint(1, 100)
         embed = discord.Embed(title="🔢 Rate die Zahl",
-                              description=f"Ich habe eine Zahl zwischen 1 und 100 ausgewählt. Versuche, sie zu erraten!")
+                              description=f"Ich habe eine Zahl zwischen **1** und **100** ausgewählt.\nVersuche, sie zu erraten!")
         await ctx.respond(embed=embed)
 
         def check(m):
             return m.author == ctx.author and m.channel == ctx.channel
 
-        while True:
+        while active_games[author_id]:
             try:
                 guess = await self.client.wait_for('message', check=check, timeout=60.0)
             except asyncio.TimeoutError:
@@ -34,13 +46,15 @@ class Funny(commands.Cog):
                                       description="Tut mir leid, du hast zu lange gebraucht, um die Zahl zu erraten.",
                                       color=discord.Color.red())
                 await ctx.respond(embed=embed)
+                del active_games[author_id]  # Entferne den Spielstatus für den Benutzer
                 break
 
             if int(guess.content) == number:
                 embed = discord.Embed(title="🎉 Gewonnen!",
-                                      description=f"Gut gemacht! Du hast die Zahl {number} richtig erraten.",
+                                      description=f"Gut gemacht! Du hast die Zahl **{number}** richtig erraten.",
                                       color=discord.Color.green())
                 await ctx.respond(embed=embed)
+                del active_games[author_id]  # Entferne den Spielstatus für den Benutzer
                 break
             elif int(guess.content) < number:
                 embed = discord.Embed(title="🔢 Zu niedrig",
