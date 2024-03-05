@@ -11,7 +11,7 @@ class Help(commands.Cog):
 
         self.commands = [
             {
-                "title": "Bot Commands - General & Economy",
+                "title": "Bot Commands - General",
                 "description": "Allgemeine und Wirtschaftsbefehle",
                 "commands": {
                     "/avatar": "Schau dir das Profilbild eines Benutzers an.",
@@ -36,14 +36,16 @@ class Help(commands.Cog):
                 "commands": {
                     "/roll": "Würfle mit der angegebenen Anzahl an Seiten.",
                     "/ratezahl": "Errate die Zahl.",
-                    "/miesmuschel": "Frag die Magische Miesmuschel"
+                    "/miesmuschel": "Frag die Magische Miesmuschel",
+                    "/gif": "Suche nach einem GIF.",
+
                 }
             },
             {
-                "title": "Bot Commands - Anderes",
+                "title": "Bot Commands - Server",
                 "description": "Verschiedene Befehle",
                 "commands": {
-                    "/reminder": "Erstellt einen Reminder. (Manage Messages-Berechtigung erforderlich)"
+                    "Placeholder": "Placeholder",
                     # ... Weitere Befehle hier
                 }
             }

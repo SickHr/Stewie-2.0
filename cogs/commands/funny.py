@@ -1,14 +1,24 @@
 import asyncio
+import os
 import random
 
 import discord
 from discord import slash_command, option
 from discord.ext import commands
 
+from dotenv import load_dotenv
+
+import requests
+
+# from dotenv import load_dotenv
+load_dotenv()
+
 active_games = {}  # Leeres Dictionary zum Speichern der aktiven Spiele
 class Funny(commands.Cog):
     def __init__(self, client):
         self.client = client
+        self.GIPHY_API_KEY = os.getenv("GIPHY_API_KEY")
+
 
     @slash_command(description="Würfel einen Würfel")
     async def roll(self, ctx):
@@ -107,6 +117,29 @@ class Funny(commands.Cog):
 
         await ctx.send(embed=embed)
 
+    @slash_command(description="Suche nach einem zufälligen GIF.")
+    @option(name="search_term", description="Suchbegriff", required=True, type=str)
+    async def gif(self, ctx, *, search_term):
+        if not search_term:
+            await ctx.respond("Bitte gib einen Suchbegriff ein.")
+            return
+
+        search_term = f'"{search_term}"'
+        response = requests.get(
+            f'http://api.giphy.com/v1/gifs/search?q={search_term}&api_key={self.GIPHY_API_KEY}&limit=10'
+        )
+
+        if response.status_code == 200:
+            data = response.json()
+            gif_choice = random.choice(data['data'])
+
+            embed = discord.Embed()
+            embed.set_image(url=gif_choice['images']['original']['url'])
+            embed.set_footer(text=f"Powered by GIPHY")
+
+            await ctx.respond(embed=embed)
+        else:
+            await ctx.respond(f"Ich konnte kein GIF zu {search_term} finden.")
 
 
 def setup(client):
