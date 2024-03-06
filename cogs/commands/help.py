@@ -11,16 +11,8 @@ class Help(commands.Cog):
 
         self.commands = [
             {
-                "title": "Bot Commands - General",
-                "description": "Allgemeine und Wirtschaftsbefehle",
-                "commands": {
-                    "/avatar": "Schau dir das Profilbild eines Benutzers an.",
-
-                }
-            },
-            {
                 "title": "Bot Commands - Moderation",
-                "description": "Moderationsbefehle",
+                "description": "",
                 "commands": {
                     "/kick": "Kickt den Benutzer. (kick_members Berechtigung erforderlich)",
                     "/ban": "Bannt den Benutzer. (ban_members Berechtigung erforderlich)",
@@ -28,22 +20,32 @@ class Help(commands.Cog):
                     "/clear": "Löscht die angegebene Anzahl an Nachrichten. (manage_message Berechtigung erforderlich)",
                     "/purge": "Löscht alle Nachrichten im aktuellen Channel. (manage_messages Berechtigung erforderlich)",
                     "/slowchat": "Setzt den Slowmode auf den angegebenen Wert. (manage_messages Berechtigung erforderlich)",
+
+                }
+            },
+            {
+                "title": "Bot Commands - Economy",
+                "description": "",
+                "commands": {
+                    "Placeholder": "Placeholder",
+
                 }
             },
             {
                 "title": "Bot Commands - Fun",
-                "description": "Spaßbefehle",
+                "description": "",
                 "commands": {
                     "/roll": "Würfle mit der angegebenen Anzahl an Seiten.",
                     "/ratezahl": "Errate die Zahl.",
                     "/miesmuschel": "Frag die Magische Miesmuschel",
                     "/gif": "Suche nach einem GIF.",
+                    "/avatar": "Schau dir das Profilbild eines Benutzers an.",
 
                 }
             },
             {
                 "title": "Bot Commands - Server",
-                "description": "Verschiedene Befehle",
+                "description": "",
                 "commands": {
                     "Placeholder": "Placeholder",
                     # ... Weitere Befehle hier

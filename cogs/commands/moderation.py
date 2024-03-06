@@ -89,6 +89,8 @@ class Moderation(commands.Cog):
         embed = discord.Embed(title="Channel geleert", description="Der Channel wurde erfolgreich geleert.",
                               color=0x00ff00)
 
+        await ctx.respond(embed=embed, delete_after=10)
+
     @slash_command(description="Setze den Slowchat")
     @option(name="seconds", description="Sekunden", required=True)
     @discord.default_permissions(manage_channels=True)

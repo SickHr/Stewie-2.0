@@ -103,7 +103,7 @@ class Funny(commands.Cog):
         ]
 
         embed = discord.Embed(
-            title=f"🐚 Magische Miesmuschel\n -  -  -  -  -  -  -  -  -  -  -  -  -",
+            title=f"🐚 Magische Miesmuschel\n -  -  -  -  -  -  -  -  -  -  -  -  -  -",
             description=f"Frage: {frage}",
             color=discord.Color.blue()
         )
@@ -115,7 +115,7 @@ class Funny(commands.Cog):
             inline=False
         )
 
-        await ctx.send(embed=embed)
+        await ctx.respond(embed=embed)
 
     @slash_command(description="Suche nach einem zufälligen GIF.")
     @option(name="search_term", description="Suchbegriff", required=True, type=str)
