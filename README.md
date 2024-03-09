@@ -36,5 +36,5 @@ Für Fragen, Feedback oder Anregungen kannst du uns über die folgenden Kanäle 
 ---
 
 <div align="center">
-  <sub>Erstellt mit ❤️ von deinem GitHub-Nutzernamen</sub>
+  <sub>Erstellt mit ❤️ von deinem Sick</sub>
 </div>
