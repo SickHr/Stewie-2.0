@@ -1,12 +1,9 @@
 <div align="center">
-  <img src="https://i.pinimg.com/originals/a7/b6/81/a7b681d443e7bbfeb91411c25ce0559f.gif" alt="Stewie Bot Avatar" width="200">
+  <img src="https://i.pinimg.com/originals/5f/93/49/5f934966a1d20bae1909c9ef2278bd4c.gif" alt="Stewie Bot Avatar" width="200">
   <h1>Stewie Discord Bot</h1>
   <p>
     <a href="https://discord.gg/gpeTksn4vn">
       <img src="https://img.shields.io/badge/Discord-Join%20Server-7289DA?logo=discord&logoColor=white" alt="Join Discord Server">
-    </a>
-    <a href="https://github.com/deinGitHubNutzername/stewie-bot/issues">
-      <img src="https://img.shields.io/github/issues/deinGitHubNutzername/stewie-bot?logo=github" alt="GitHub Issues">
     </a>
   </p>
 </div>
@@ -26,19 +23,15 @@ Stewie ist ein vielseitiger Discord-Bot, der speziell für deine Community entwi
 
 ## 📄 Dokumentation
 
-Die vollständige Dokumentation zu Stewie findest du in unserem [Wiki](https://github.com/deinGitHubNutzername/stewie-bot/wiki). Dort erfährst du, wie du den Bot einrichtest, verwendest und anpasst.
+hier erfährst du, wie du den Bot einrichtest, verwendest und anpasst.
 
-## 🤝 Mitwirken
-
-Wenn du Interesse hast, zu Stewie beizutragen, sind Pull Requests herzlich willkommen! Bitte folge den Richtlinien in der [Mitwirkenden-Anleitung](.github/CONTRIBUTING.md).
 
 ## 📫 Kontakt
 
 Für Fragen, Feedback oder Anregungen kannst du uns über die folgenden Kanäle erreichen:
 
-- [Discord-Server](https://discord.gg/abcdefgh)
-- [GitHub-Issues](https://github.com/deinGitHubNutzername/stewie-bot/issues)
-- [E-Mail](mailto:stewie-bot@email.com)
+- [Discord-Server](https://discord.gg/gpeTksn4vn)
+- [E-Mail](mailto:Contact@Avalium.me)
 
 ---
 
